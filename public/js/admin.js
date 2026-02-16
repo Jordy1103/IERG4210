@@ -90,8 +90,12 @@ function editProduct(pid) {
 function deleteProduct(pid) {
   if (confirm('Are you sure you want to delete this product?')) {
     fetch(`/api/products/${pid}`, { method: 'DELETE' })
-      .then(response => response.json())
-      .then(data => {
+      .then(response => response.json().then(data => ({ data, ok: response.ok, status: response.status })))
+      .then(({ data, ok, status }) => {
+        if (!ok) {
+          showMessage('product-message', data.error || `Error deleting product (Status: ${status})`, 'error');
+          return;
+        }
         showMessage('product-message', data.message || 'Product deleted successfully', 'success');
         loadProducts();
       })
@@ -229,8 +233,12 @@ function editCategory(catid) {
 function deleteCategory(catid) {
   if (confirm('Are you sure you want to delete this category? Associated products may also be deleted.')) {
     fetch(`/api/categories/${catid}`, { method: 'DELETE' })
-      .then(response => response.json())
-      .then(data => {
+      .then(response => response.json().then(data => ({ data, ok: response.ok, status: response.status })))
+      .then(({ data, ok, status }) => {
+        if (!ok) {
+          showMessage('category-message', data.error || `Error deleting category (Status: ${status})`, 'error');
+          return;
+        }
         showMessage('category-message', data.message || 'Category deleted successfully', 'success');
         loadCategories();
       })
