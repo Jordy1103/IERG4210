@@ -175,21 +175,34 @@ main {
   padding-bottom: 10px;
 }
 
+.cart-total {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #0077cc;
+  text-align: right;
+  padding: 10px 0;
+  border-bottom: 2px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+
 .shopping-list ul {
   list-style: none;
   padding: 0;
   margin: 0 0 1em;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
-.shopping-list li {
+.shopping-list li.cart-item {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 12px;
-  padding: 8px;
+  padding: 10px;
   background: #fff;
   border-radius: 6px;
   border: 1px solid #e5e5e5;
+  position: relative;
 }
 
 .cart-item-img {
@@ -203,9 +216,80 @@ main {
 .cart-item-details {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   flex: 1;
   font-size: 0.9em;
+}
+
+.item-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.qty-btn:hover {
+  background: #0077cc;
+  color: white;
+  border-color: #0077cc;
+}
+
+.qty-input {
+  width: 45px;
+  padding: 4px 6px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #0077cc;
+  font-size: 0.85em;
+}
+
+.delete-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
 }
 
 .shopping-list input[type="number"] {
@@ -220,19 +304,21 @@ main {
   font-size: 0.85em;
 }
 
-.shopping-list button {
-  background: #0077cc;
+.shopping-list .checkout-btn {
+  background: #28a745;
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 12px;
   width: 100%;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s ease;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-.shopping-list button:hover {
-  background: #005fa3;
+.shopping-list .checkout-btn:hover {
+  background: #218638;
 }
 
 /* Product details page */

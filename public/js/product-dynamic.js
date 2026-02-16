@@ -85,8 +85,20 @@ function displayProduct(product) {
   });
   
   // Update Add to Cart button
-  document.querySelector('.add-to-cart-btn').addEventListener('click', () => {
-    console.log('Added to cart:', product.pid);
-    // This integrates with the existing cart functionality
+  const addBtn = document.querySelector('.add-to-cart-btn');
+  addBtn.addEventListener('click', async () => {
+    if (shoppingCartUI) {
+      const success = await shoppingCartUI.addItem(product.pid, 1);
+      if (success) {
+        // Show feedback
+        const originalText = addBtn.textContent;
+        addBtn.textContent = '✓ Added to Cart!';
+        addBtn.style.background = '#28a745';
+        setTimeout(() => {
+          addBtn.textContent = originalText;
+          addBtn.style.background = '';
+        }, 1500);
+      }
+    }
   });
 }

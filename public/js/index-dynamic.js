@@ -70,11 +70,24 @@ function loadProducts() {
 // Handle "Add to Cart" button clicks
 function handleCartButtons() {
   document.querySelectorAll('.add-to-cart').forEach(btn => {
-    btn.addEventListener('click', function(e) {
+    btn.addEventListener('click', async function(e) {
       e.preventDefault();
       const productId = this.dataset.productId;
-      // This integrates with the existing cart functionality from script.js
-      console.log('Add to cart:', productId);
+      
+      // Add item to cart
+      if (shoppingCartUI) {
+        const success = await shoppingCartUI.addItem(productId, 1);
+        if (success) {
+          // Show feedback
+          const originalText = this.textContent;
+          this.textContent = '✓ Added!';
+          this.style.background = '#28a745';
+          setTimeout(() => {
+            this.textContent = originalText;
+            this.style.background = '';
+          }, 1500);
+        }
+      }
     });
   });
 }
