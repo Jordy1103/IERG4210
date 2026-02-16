@@ -255,6 +255,7 @@ class ShoppingCartUI {
     // Quantity increment buttons
     this.cartList?.querySelectorAll('.qty-btn.increment').forEach(btn => {
       btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const pid = e.target.dataset.pid;
         const item = this.cart.getItem(pid);
         if (item) {
@@ -267,6 +268,7 @@ class ShoppingCartUI {
     // Quantity decrement buttons
     this.cartList?.querySelectorAll('.qty-btn.decrement').forEach(btn => {
       btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const pid = e.target.dataset.pid;
         const item = this.cart.getItem(pid);
         if (item && item.qty > 1) {
@@ -279,6 +281,7 @@ class ShoppingCartUI {
     // Quantity input fields
     this.cartList?.querySelectorAll('.qty-input').forEach(input => {
       input.addEventListener('change', (e) => {
+        e.stopPropagation();
         const pid = e.target.dataset.pid;
         const qty = parseInt(e.target.value) || 0;
         this.cart.updateQuantity(pid, qty);
@@ -289,6 +292,7 @@ class ShoppingCartUI {
     // Delete buttons
     this.cartList?.querySelectorAll('.delete-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const pid = e.target.dataset.pid;
         this.cart.removeItem(pid);
         this.render();
