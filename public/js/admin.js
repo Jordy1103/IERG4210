@@ -1,6 +1,6 @@
 // Admin Panel JavaScript
 
-// ==================== Tab Switching ====================
+//Tab Switching
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const tabName = btn.dataset.tab;
@@ -23,7 +23,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// ==================== Message Display ====================
+// Message Display
 function showMessage(elementId, message, type = 'success') {
   const msgElement = document.getElementById(elementId);
   msgElement.textContent = message;
@@ -35,7 +35,7 @@ function showMessage(elementId, message, type = 'success') {
   }, 5000);
 }
 
-// ==================== PRODUCTS ====================
+// PRODUCTS
 
 // Load and display all products
 function loadProducts() {
@@ -166,7 +166,7 @@ document.getElementById('product-form').addEventListener('submit', async (e) => 
   }
 });
 
-// ==================== CATEGORIES ====================
+//CATEGORIES
 
 // Load and display all categories
 function loadCategories() {

@@ -52,9 +52,9 @@ const upload = multer({
   limits: { fileSize: 10 * 1024 * 1024 } // 10MB limit
 });
 
-// ==================== API Routes ====================
+//API Routes
 
-// ==================== CATEGORIES ====================
+//CATEGORIES
 
 // Get all categories
 app.get('/api/categories', (req, res) => {
@@ -141,7 +141,7 @@ app.delete('/api/categories/:catid', (req, res) => {
   });
 });
 
-// ==================== PRODUCTS ====================
+//PRODUCTS
 
 // Get all products (with optional category filter)
 app.get('/api/products',
@@ -419,7 +419,7 @@ app.delete('/api/products/:pid', (req, res) => {
   });
 });
 
-// ==================== Error Handler ====================
+//  Error Handler 
 app.use((err, req, res, next) => {
   console.error(err);
   if (err instanceof multer.MulterError) {
