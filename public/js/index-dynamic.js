@@ -80,7 +80,7 @@ function handleCartButtons() {
         if (success) {
           // Show feedback
           const originalText = this.textContent;
-          this.textContent = '✓ Added!';
+          this.textContent = 'Added!';
           this.style.background = '#28a745';
           setTimeout(() => {
             this.textContent = originalText;
