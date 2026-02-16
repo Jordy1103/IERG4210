@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <h1>My Shopping Site</h1>
+    <nav>
+      <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="category-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="product-details">
+      <div class="product-image">
+        <!-- Swiper Slider -->
+        <div class="swiper product-swiper">
+          <div class="swiper-wrapper">
+            <!-- Product images will be loaded by JavaScript -->
+          </div>
+          <!-- Navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>Loading...</h2>
+        <p class="price"></p>
+        <p class="description"></p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <aside class="shopping-list">
+    <h2>Shopping List</h2>
+    <ul>
+      <!-- Product will be loaded by JavaScript -->
+    </ul>
+    <button>Checkout</button>
+  </aside>
+
+  <footer>
+    
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>
+

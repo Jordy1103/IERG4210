@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gaming</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <h1>My Shopping Site</h1>
+    <nav>
+      <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li>Gaming</li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="category-bar">
+    <ul>
+      <li><a href="category1.html" class="active">Gaming</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="product-grid">
+      <article class="product">
+        <a href="product.html?id=controller" class="product-link">
+          <img src="images/controller.jpg" alt="Gaming Controller" />
+          <h3>Gaming Controller</h3>
+          <p class="price">$29.99</p>
+        </a>
+        <button>Add to Cart</button>
+      </article>
+      <article class="product">
+        <a href="product.html?id=keyboard" class="product-link">
+          <img src="images/keyboard.jpg" alt="Gaming Keyboard" />
+          <h3>Gaming Keyboard</h3>
+          <p class="price">$79.99</p>
+        </a>
+        <button>Add to Cart</button>
+      </article>
+    </section>
+  </main>
+
+  <aside class="shopping-list" aria-label="Shopping list">
+    <h2>Shopping List</h2>
+    <ul>
+      <li>
+        <img src="images/controller.jpg" alt="Gaming Controller" class="cart-item-img" />
+        <div class="cart-item-details">
+          <span>Gaming Controller</span>
+          <input type="number" value="1" min="1" />
+          <span class="item-price">@ $29.99</span>
+        </div>
+      </li>
+    </ul>
+    <button>Checkout</button>
+  </aside>
+
+  <footer>
+    
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "products": {
+    "bread": {
+      "id": "bread",
+      "name": "Basic White Bread",
+      "price": 3.30,
+      "description": "simply delicious, just buy it!",
+      "images": ["bread.jpg", "bread3.jpg"],
+      "category": "Category1"
+    },
+    "beef": {
+      "id": "beef",
+      "name": "Fresh Beef",
+      "price": 10.00,
+      "description": "Expensive beef, buy or it's your loss!",
+      "images": ["Beef.jpg.webp", "beef2.jpg", "beef3.jpg"],
+      "category": "Category1"
+    },
+    "doll": {
+      "id": "doll",
+      "name": "Doll",
+      "price": 15.00,
+      "description": "A delightful doll, perfect for playtime!",
+      "images": ["doll1.jpg", "doll2.jpg"],
+      "category": "Category1"
+    },
+    "controller": {
+      "id": "controller",
+      "name": "Gaming Controller",
+      "price": 29.99,
+      "description": "Professional gaming controller with responsive controls and ergonomic design.",
+      "images": ["controller.jpg", "controller2.jpg"],
+      "category": "Gaming"
+    },
+    "keyboard": {
+      "id": "keyboard",
+      "name": "Gaming Keyboard",
+      "price": 79.99,
+      "description": "Mechanical gaming keyboard with RGB lighting and programmable keys.",
+      "images": ["keyboard.jpg", "keyboard2.jpg"],
+      "category": "Gaming"
+    },
+    "glasses": {
+      "id": "glasses",
+      "name": "Glasses",
+      "price": 49.99,
+      "description": "Blue light blocking gaming glasses to reduce eye strain during long gaming sessions.",
+      "images": ["glasses.jpg", "glasses2.webp"],
+      "category": "Gaming"
+    }
+  }
+}
