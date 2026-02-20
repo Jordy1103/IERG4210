@@ -52,9 +52,9 @@ const upload = multer({
   limits: { fileSize: 10 * 1024 * 1024 } // 10MB limit
 });
 
-//API Routes
+// ==================== API Routes ====================
 
-//CATEGORIES
+// ==================== CATEGORIES ====================
 
 // Get all categories
 app.get('/api/categories', (req, res) => {
@@ -141,7 +141,7 @@ app.delete('/api/categories/:catid', (req, res) => {
   });
 });
 
-//PRODUCTS
+// ==================== PRODUCTS ====================
 
 // Get all products (with optional category filter)
 app.get('/api/products',
@@ -419,7 +419,7 @@ app.delete('/api/products/:pid', (req, res) => {
   });
 });
 
-//  Error Handler 
+// ==================== Error Handler ====================
 app.use((err, req, res, next) => {
   console.error(err);
   if (err instanceof multer.MulterError) {
@@ -434,3 +434,32 @@ app.use((err, req, res, next) => {
 app.listen(PORT, '0.0.0.0', () => { 
   console.log(`Server running at http://20.199.85.138:${PORT}`); 
 });
+//use of AI: how to set up the server online to AZURE
+//then used npm start and fixed things in VM directly instead of coding
+//AI solution: sudo nano /etc/nginx/sites-available/default then
+/*server {
+    listen 80;
+    server_name 20.199.85.138;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # Serve uploaded images directly
+    location /uploads/ {
+        root /home/IERG4210/website;
+    }
+
+    # Serve static files (public folder)
+    location /public/ {
+        root /home/IERG4210/website;
+    }
+}
+*/
+//then restart sudo systemctl restart nginx
+
